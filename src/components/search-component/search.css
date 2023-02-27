@@ -1,0 +1,30 @@
+.mobile-search {
+  padding: 1rem;
+  /* display: none; */
+}
+
+.mobile-search-control {
+  display: flex;
+  border: 1px solid rgba(1, 1, 1, 0.8);
+  align-items: center;
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.mobile-search-control input {
+  background-color: transparent;
+  border: none;
+  margin-left: 0.5rem;
+}
+
+.search-icon {
+  color: #da7ff9;
+}
+
+@media (min-width: 650px) {
+  .mobile-search {
+    display: block;
+    width: 10rem;
+  }
+}

@@ -1,0 +1,26 @@
+
+.file-controller{
+  width: 100%;
+  border-top:1px solid #f4f4f4;
+  border-bottom:1px solid #f4f4f4;
+}
+
+.file-label {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  spacing:5px;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+input[type="file"]{
+  height: .1px;
+  width:.1px;
+  position:absolute;
+}

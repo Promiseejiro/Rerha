@@ -1,0 +1,38 @@
+img{
+ /* height: 2rem;
+  width: 3rem;
+  */
+}
+
+.post-container{
+  
+}
+
+
+.post-nav{
+  padding:1rem;
+  border-bottom: 2px solid #f4f4f4;
+}
+
+.post-nav-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-title{
+  font-weight: 500;
+}
+
+.post-textarea{
+  width:100%;
+  height: 12rem;
+}
+
+
+
+
+.post-header{
+  display:flex;
+  align-items: center;
+}

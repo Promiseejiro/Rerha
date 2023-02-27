@@ -1,0 +1,20 @@
+.small-btn {
+  padding: 0.5rem;
+  font-weight: 500;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  outline: none;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  color: #da7ff9;
+}
+
+.small-btn:hover {
+  outline: none;
+  opacity: 0.7;
+}
+
+.small-btn-text {
+}

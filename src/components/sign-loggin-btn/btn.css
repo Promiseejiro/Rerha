@@ -1,0 +1,29 @@
+a{
+  text-decoration: none;
+}
+
+/*.btn{
+  padding: .8rem 1.5rem;
+  outline: none;
+  border:2px solid #fff;
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  margin-top:.5rem;
+  border-radius: 5px;
+  display:block;
+  margin:auto;
+  min-width: 3rem;
+  max-width: 10rem;
+  font-family: 'Poppins', sans-serif;
+}*/
+
+
+
+
+.btn:hover{
+  opacity: .7;
+}
+
+.btn:focus{
+  outline: none;
+}

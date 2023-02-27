@@ -1,0 +1,41 @@
+.auth-side-bar-children{
+     width: 100%;
+     display: flex;
+     flex-direction:column;
+     justify-content: center;
+     padding-top:5rem ;
+}
+
+.auth-side-bar-children h1{
+     font-family: 'Nova Round', cursive;
+  color:#fff ;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2rem;
+    
+}
+
+.auth-side-bar-slide-show{
+     margin-top: 3.5rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     text-align: center;
+     flex-direction: column;
+}
+
+.auth-side-bar-slide-show h2{
+     color: #fff;
+     margin-bottom: .5rem;
+}
+
+/* .auth-side-bar-slide-show-icon{
+     font-size: 7rem;
+     color: #fff;
+} */
+
+.auth-side-bar-slide-show-img{
+     width:15rem;
+     height: 15rem;
+}

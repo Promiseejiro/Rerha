@@ -1,0 +1,106 @@
+.admin-upload-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Wendy One", sans-serif;
+  z-index: 2;
+}
+
+.design-setup {
+  margin-top: 5rem;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.design-setup-image {
+  width: 30rem;
+  height: 25rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.image {
+  position: absolute;
+  height: 5rem;
+  width: 5rem;
+  top: 3rem;
+  left: 3rem;
+}
+
+.user-name {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 0.5rem;
+}
+
+.user-name p {
+  margin-top: -0.5rem;
+}
+
+#file {
+  display: none;
+  cursor: pointer;
+}
+
+.file-btn {
+  background-color: #da7ff9;
+  color: #fff;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.image-positioning-form {
+  border: 2px solid #da7ff9;
+  padding: 1rem;
+}
+
+.image-form-control {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-form-control label {
+  color: #da7ff9;
+}
+
+.image-form-control input {
+  border: 2px solid #da7ff9;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.positioning-form {
+  display: grid;
+  grid-template-columns: 5rem 5rem 5rem 5rem;
+  margin-top: 1rem;
+}
+
+.generate-submit {
+  padding: 0.5rem;
+  background-color: #da7ff9;
+  color: #fff;
+  width: 100%;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+
+@media (min-width: 650px) {
+  .design-setup {
+    display: flex;
+  }
+}

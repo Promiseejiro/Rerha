@@ -1,0 +1,50 @@
+.main-container {
+  display: block;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 4rem;
+  width: 50%;
+  height: 100%;
+}
+
+.side-bar {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  height: 100%;
+  background-color: #da7ff9;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.nav-link li a {
+  display: block;
+  color: #fff !important;
+}
+
+/* .chats-side-bar{
+     display: none;
+} */
+
+@media (min-width: 650px) {
+  .main-container {
+    display: none;
+    align-items: center;
+  }
+
+  .side-bar {
+    display: none;
+  }
+
+  .chats-side-bar {
+    display: block;
+    height: 100vh;
+  }
+}
+
+/* .pages{
+     width: 100%;
+     background-color: rgba(0,0,0,.1);
+} */

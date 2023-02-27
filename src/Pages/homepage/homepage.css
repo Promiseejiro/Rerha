@@ -1,0 +1,88 @@
+.homepage-hero{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 4rem;
+  left:0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Wendy One', sans-serif;
+  z-index:2;
+}
+
+.hero-content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: .5rem 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+}
+
+.rerha{
+  font-size: 4rem;
+  font-family: 'Wendy One', sans-serif;
+ 
+}
+
+.homepage-hero .span-left{
+color:#da7ff9 ;
+
+}
+.homepage-hero .span-right{
+  color:#fff ;
+  margin-left: -20px;
+  background-color: #da7ff9;
+}
+
+.hero-content p{
+  color: #f0f0f0;
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'Wendy One', sans-serif;
+  margin: 1rem 0;
+}
+
+.homepage-hero button {
+  display: flex;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-right: .5rem;
+  color: #da7ff9;
+  padding: .5rem;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+
+@media (min-width:650px) {
+  .hompage-flex-1{
+    width: 50%;
+  }
+  
+  .hompage-flex-2{
+            width: 50%;
+            display:flex;
+            align-items: center;
+            justify-content: center;      
+  }
+  .span-right{
+    background-color: transparent;
+  }
+
+  .search-btn{
+    display: block;
+  }
+  
+  .homepage-header ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-btn{
+    display: none;
+  }
+}

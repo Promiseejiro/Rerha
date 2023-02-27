@@ -1,0 +1,48 @@
+.post-container{
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.poster-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.poster-header >div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.post-info{
+  
+}
+
+.poster-info >div{
+  display: flex;
+  align-items: center;
+}
+
+.post-view-info span{
+  font-size: 10px;
+  
+}
+
+.post-dot{
+  padding: 0 .2px;
+}
+
+.post-caption{
+  font-size: 11px;
+  font-weight: 500;
+  padding: .2rem 1rem;
+  color:#000;
+}
+
+.post-comment-section{
+  padding: .2rem 1rem ;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}

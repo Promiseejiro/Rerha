@@ -1,0 +1,133 @@
+.public-design-setup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 2rem;
+  position: relative;
+}
+
+.screen-Shot {
+  width: 1px;
+  height: 1px;
+  overflow: scroll;
+}
+
+.public-design-setup-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 5px;
+}
+
+.selfie-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 4rem;
+  width: 100%;
+  height: 90vh;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.design-image-setup {
+  width: 100%;
+  /* height: 100%; */
+  position: relative;
+}
+
+.selected-image {
+  position: absolute;
+  /* background-color: #fff; */
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+
+.public-positioning-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  position: relative;
+}
+
+.take-sefie-and-download-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+#image {
+  display: none;
+}
+
+.form-input {
+  margin: 0.5rem 0;
+}
+
+.form-input input {
+  padding: 0.2rem;
+  width: 100%;
+  border: 2px solid #da7ff9;
+  border-radius: 5px;
+}
+
+.other-option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+}
+
+.sefie-btn {
+  color: #fff;
+  background-color: #da7ff9;
+}
+
+.download-btn {
+  border: 2px solid #da7ff9;
+  color: #da7ff9;
+  margin-top: 1rem;
+}
+
+.magnifier-controller {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  z-index: 4;
+  background-color: black;
+  width: 100vh;
+  height: 10 0vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 650px) {
+  .public-design-setup-child {
+    flex-direction: row;
+  }
+
+  .take-sefie-and-download-container {
+    bottom: -5rem;
+    right: 2rem;
+  }
+}

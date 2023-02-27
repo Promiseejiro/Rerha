@@ -1,0 +1,60 @@
+.desktop-nav-menu {
+  display: none;
+}
+
+@media (min-width: 650px) {
+  .desktop-nav-menu {
+    display: flex;
+    font-family: "poppins", sans-serif;
+  }
+
+  .desktop-main-menu {
+    position: relative;
+  }
+
+  .nav-main-menu-list {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+    cursor: pointer;
+  }
+
+  
+
+  .nav-main-menu-list span {
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "poppins", sans-serif;
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .nav-main-menu-list span:active{
+     color: rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .icons {
+    margin-left: 0.5rem;
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .drop-down-menu {
+    cursor: pointer;
+    position: absolute;
+    top: 2rem;
+    left: 0.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+
+  .drop-down-menu li {
+    margin: 0.5rem 1rem;
+    padding: 0 1rem;
+    margin: 0.2rem 0;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 420;
+  }
+}

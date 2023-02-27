@@ -1,0 +1,15 @@
+.is-loading-wrapper{
+  position:fixed;
+  width: 100vw;
+  height:100vh;
+display:grid;
+place-items: center;
+background-color: #fd683d;
+}
+
+.isloading-header{
+  color:#fff;
+  font-family: 'Nova Round', cursive;
+  font-size: 4rem;
+  font-weight: 300;
+}
