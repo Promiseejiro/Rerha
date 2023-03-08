@@ -12,7 +12,6 @@ import ImageMagnifier from "../../components/magnifier/magnifier";
 const PublicDesign = ({ showMobileNav }) => {
   const { designId } = useParams();
   console.log(designId);
-  const [arr, setArray] = useState([1]);
   const [magnifiedImg, setMagfiedImag] = useState("");
   const [design, setDesign] = useState([]);
   const screenShotRef = useRef(null);
@@ -28,12 +27,10 @@ const PublicDesign = ({ showMobileNav }) => {
     setmagnifierHeight(200);
     setmagnifieWidth(200);
     setMagnifying(true);
-    console.log(e.target.files[0]);
-    console.log("success");
   };
 
   const y = () => {
-    console.log("succes");
+
   };
 
   const handleInput = (e) => {
@@ -128,8 +125,8 @@ const PublicDesign = ({ showMobileNav }) => {
                       width: `${eval(item.width)}px`,
                       height: `${eval(item.height)}px`,
                       borderRadius: "50%",
-                      top: `${eval(item.top) - 30}px`,
-                      left: `${eval(item.left_side) - 30}px`,
+                      top: `${eval(item.top)}px`,
+                      left: `${eval(item.left_side)}px`,
                       border: `${eval(item.thickness)}px solid ${
                         item.border_color
                       }`,
@@ -200,7 +197,6 @@ const PublicDesign = ({ showMobileNav }) => {
         </div>
       )}
 
-      {/* <Magnfier /> */}
       {magnifying && (
         <div className="magnifier-controller">
           <ImageMagnifier
