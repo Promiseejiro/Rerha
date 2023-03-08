@@ -29,9 +29,7 @@ const PublicDesign = ({ showMobileNav }) => {
     setMagnifying(true);
   };
 
-  const y = () => {
-
-  };
+  const y = () => {};
 
   const handleInput = (e) => {
     if (e.target.value.length > 15) {
@@ -50,17 +48,13 @@ const PublicDesign = ({ showMobileNav }) => {
   const handleSefie = () => {
     setTakeSefie(true);
   };
-  // const showMagnifier = () => {
-  //   setMagnifying(true);
-  // };
 
   const closeCamera = () => {
     setTakeSefie(false);
     setSefieSrc(JSON.parse(localStorage.getItem("sefieImg")).capturedImage);
+    setMagfiedImag(JSON.parse(localStorage.getItem("sefieImg")).capturedImage);
+    console.log(JSON.parse(localStorage.getItem("sefieImg")).capturedImage);
     localStorage.removeItem("sefieImg");
-    setMagnifying(true);
-    setmagnifierHeight(400);
-    setmagnifieWidth(400);
   };
 
   const screenShoot = () => {
@@ -98,7 +92,7 @@ const PublicDesign = ({ showMobileNav }) => {
   return (
     <React.Fragment>
       <div className="public-design-setup">
-        <div className="public-design-setup-child">
+      
           <div className="design-image-setup" ref={screenShotRef}>
             {design.map((item, index) => {
               console.log(item);
@@ -106,10 +100,8 @@ const PublicDesign = ({ showMobileNav }) => {
                 <div
                   key={index}
                   style={{
-                    width: "30rem",
-                    height: "25rem",
-                    marginBottom: " 1rem",
-                    marginRight: "1rem",
+                    width: "100%",
+                    height: "100%",
                   }}
                 >
                   <img
@@ -163,7 +155,7 @@ const PublicDesign = ({ showMobileNav }) => {
             </div>
           </div>
           {/* the design-setup styling is applied from admain css */}
-        </div>
+        {/* </div> */}
         <div className="public-positioning-form">
           <div className="form-input">
             <input type="text" placeholder="two name" onChange={handleInput} />

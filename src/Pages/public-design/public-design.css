@@ -1,7 +1,4 @@
 .public-design-setup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   margin-top: 2rem;
   padding: 2rem;
@@ -14,17 +11,6 @@
   overflow: scroll;
 }
 
-.public-design-setup-child {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 1rem;
-  margin-top: 2rem;
-  border-radius: 5px;
-}
-
 .selfie-container {
   position: absolute;
   display: flex;
@@ -32,15 +18,16 @@
   justify-content: center;
   left: 0;
   top: 4rem;
-  width: 100%;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
   z-index: 5;
   background-color: rgba(0, 0, 0, 1);
 }
 
 .design-image-setup {
-  width: 100%;
-  /* height: 100%; */
+  width: 30rem;
+  height: 25rem;
+  margin: 3rem 0 0 0;
   position: relative;
 }
 
@@ -121,7 +108,12 @@
   justify-content: center;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 750px) {
+  .public-design-setup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .public-design-setup-child {
     flex-direction: row;
   }

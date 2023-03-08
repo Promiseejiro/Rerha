@@ -22,7 +22,7 @@ const HomePage = ({ showMobileNav }) => {
               <span className="rerha span-right"> HA</span>
             </div>
             <p>
-              Make your event visible by Using rerha publicity multiple design
+              Make your event visible by Using rerha publicitys multiple design
               generator.
             </p>
             <Link to="/select">

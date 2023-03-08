@@ -22,7 +22,7 @@ const WebcamCapture = ({ closeCamera }) => {
       const imageSrc = webCamRef.current.getScreenshot();
       localStorage.setItem(
         "sefieImg",
-        JSON.stringify({ capturedImage: imageSrc, imagepresent: true })
+        JSON.stringify({ capturedImage: imageSrc })
       );
       // close sefie container
       closeCamera();
