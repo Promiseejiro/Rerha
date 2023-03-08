@@ -11,10 +11,14 @@
 
 .design-setup {
   margin-top: 5rem;
-  position: relative;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 2rem;
   border-radius: 10px;
+}
+
+.design-setup-container {
+  position: relative;
+  width: 30em;
 }
 
 .design-setup-image {
@@ -24,12 +28,78 @@
   margin-right: 1rem;
 }
 
-.image {
+.chosen-image {
   position: absolute;
+  height: 112px;
+  width: 112px;
+  top: 0;
+  left: 0;
+}
+
+.chosen-image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.select-design-btn {
+  position: absolute;
+  right: 3rem;
+  top: 2rem;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  background-color: transparent !important;
+  overflow: hidden;
+}
+
+.resizer {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.r-right {
+  left: 150px;
+  top: 20px;
+  width: 6px;
+  height: 100px;
+  cursor: e-resize;
+}
+
+.r-left {
+  position: absolute;
+  right: 300;
+  top: 0;
+  width: 6px;
+  height: 100px;
+}
+
+.r-top {
+  height: 6px;
+  width: 112px;
+}
+
+.r-bottom {
+  width: 100px;
+  height: 6px;
+  cursor: ns-resize;
+}
+
+.name-r {
+  width: 6px;
   height: 5rem;
+  left: 5rem;
+  top: 0px;
+  cursor: e-resize;
+}
+.name-b {
   width: 5rem;
-  top: 3rem;
-  left: 3rem;
+  height: 6px;
+  left: 0;
+  top: 77px;
+  cursor: ns-resize;
 }
 
 .user-name {
@@ -39,6 +109,11 @@
   flex-direction: column;
   background-color: #fff;
   padding: 0.5rem;
+  left: 0;
+  top: 150px;
+  width: 200px;
+  height: 40px;
+  z-index: 2;
 }
 
 .user-name p {
@@ -96,11 +171,10 @@
   color: #fff;
   width: 100%;
   border-radius: 5px;
-  margin: 0.5rem;
 }
 
 @media (min-width: 650px) {
-  .design-setup {
+  /* .design-setup {
     display: flex;
-  }
+  } */
 }

@@ -18,11 +18,12 @@ const SelectDesign = ({ showMobileNav }) => {
       "https://connectionpourtous.com/api/v1/admin/get"
     );
     localStorage.setItem("designs", JSON.stringify(data.data.data.images));
+    console.log(data.data.data.image);
     if (!data.data.data.images) {
       setDesigns([]);
     }
 
-    console.log( data.data)
+    console.log(data.data.data.images);
     setFilteredDesign(
       data.data.data.images.slice(indexOfFirstPost, indexOfLastPost)
     );

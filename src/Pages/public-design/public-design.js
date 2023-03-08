@@ -12,6 +12,7 @@ import ImageMagnifier from "../../components/magnifier/magnifier";
 const PublicDesign = ({ showMobileNav }) => {
   const { designId } = useParams();
   console.log(designId);
+  const [arr, setArray] = useState([1]);
   const [magnifiedImg, setMagfiedImag] = useState("");
   const [design, setDesign] = useState([]);
   const screenShotRef = useRef(null);
@@ -82,7 +83,7 @@ const PublicDesign = ({ showMobileNav }) => {
     localStorage.removeItem("magnifiedimg");
     console.log(design);
     setDesign(data);
-    console.log(design);
+    console.log(data);
   }, []);
 
   useEffect(() => {
@@ -102,45 +103,31 @@ const PublicDesign = ({ showMobileNav }) => {
       <div className="public-design-setup">
         <div className="public-design-setup-child">
           <div className="design-image-setup" ref={screenShotRef}>
-            <img src={image} className="design-setup-image" />
-            <div
-              className="selected-image"
-              style={{
-                backgroundImage: { selectedImage },
-              }}
-            >
-              {/* <img src={selectedImage}  /> */}
-            </div>
-
             {design.map((item, index) => {
-              console.log(item.left_side);
+              console.log(item);
               return (
                 <div
                   key={index}
                   style={{
-                    width: "100%",
-                    height: "100%",
+                    width: "30rem",
+                    height: "25rem",
+                    marginBottom: " 1rem",
+                    marginRight: "1rem",
                   }}
                 >
+                  <img
+                    src={image}
+                    className="design-setup-image"
+                    style={{ width: "100%", height: "100%" }}
+                  />
                   <img
                     key={index}
                     src={magnifiedImg}
                     className="selected-image"
                     style={{
-                      width: `${eval(item.width)}rem`,
-                      height: `${eval(item.height)}rem`,
-                      borderTopRightRadius: `${eval(
-                        item.border_raduis_top_right
-                      )}rem`,
-                      borderTopLeftRadius: `${eval(
-                        item.border_raduis_top_left
-                      )}rem`,
-                      borderBottomRightRadius: `${eval(
-                        item.border_raduis_bottom_right
-                      )}rem`,
-                      borderBottomLeftRadius: `${eval(
-                        item.border_raduis_bottom_left
-                      )}rem`,
+                      width: `${eval(item.width)}px`,
+                      height: `${eval(item.height)}px`,
+                      borderRadius: "50%",
                       top: `${eval(item.top) - 30}px`,
                       left: `${eval(item.left_side) - 30}px`,
                       border: `${eval(item.thickness)}px solid ${
@@ -152,13 +139,13 @@ const PublicDesign = ({ showMobileNav }) => {
                   <div
                     className="user-name"
                     style={{
-                      top: `${item.name_top - 1.5}rem`,
-                      left: `${item.name_left - 1.5}rem`,
+                      top: `${item.name_top - 1.5}px`,
+                      left: `${item.name_left - 1.5}px`,
                     }}
                   >
                     <h3
                       style={{
-                        fontSize: `${item.font_size}rem`,
+                        fontSize: `${item.font_size}px`,
                         fontWeight: `${item.font_weight}px`,
                         color: item.font_color,
                       }}
@@ -179,35 +166,31 @@ const PublicDesign = ({ showMobileNav }) => {
             </div>
           </div>
           {/* the design-setup styling is applied from admain css */}
-          <div className="public-positioning-form">
-            <div className="form-input">
-              <input
-                type="text"
-                placeholder="two name"
-                onChange={handleInput}
-              />
-            </div>
-            <div className="form-input">
-              {/* style from admin css file*/}
-              <input type="file" id="file" onChange={handleSelectImage} />
-              <label className="file-btn" htmlFor="file">
-                choose image
-              </label>
-            </div>
-            <div className="take-sefie-and-download-container">
-              <button
-                className="other-option-btn sefie-btn"
-                onClick={handleSefie}
-              >
-                <AiTwotoneCamera />
-              </button>
-              <button
-                className=" other-option-btn download-btn"
-                onClick={screenShoot}
-              >
-                <AiOutlineDownload />
-              </button>
-            </div>
+        </div>
+        <div className="public-positioning-form">
+          <div className="form-input">
+            <input type="text" placeholder="two name" onChange={handleInput} />
+          </div>
+          <div className="form-input">
+            {/* style from admin css file*/}
+            <input type="file" id="file" onChange={handleSelectImage} />
+            <label className="file-btn" htmlFor="file">
+              choose image
+            </label>
+          </div>
+          <div className="take-sefie-and-download-container">
+            <button
+              className="other-option-btn sefie-btn"
+              onClick={handleSefie}
+            >
+              <AiTwotoneCamera />
+            </button>
+            <button
+              className=" other-option-btn download-btn"
+              onClick={screenShoot}
+            >
+              <AiOutlineDownload />
+            </button>
           </div>
         </div>
       </div>
