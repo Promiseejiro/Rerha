@@ -3,23 +3,15 @@ import image from "../../image/image1.jpg";
 
 function Autocarosel() {
   return (
-    <Carousel>
+    <Carousel className="carousel">
       <Carousel.Item>
-        <img className="d-block w-100" src={image} alt="First slide" />
-        <Carousel.Caption>
-        </Carousel.Caption>
+        <img className="carosel-image" src={image} alt="First slide" />
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100" src={image} alt="Second slide" />
-        <Carousel.Caption>
-       
-        </Carousel.Caption>
+        <img className="carosel-image" src={image} alt="Second slide" />
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100" src={image} alt="Third slide" />
-
-        <Carousel.Caption>
-        </Carousel.Caption>
+        <img className="carosel-image" src={image} alt="Third slide" />
       </Carousel.Item>
     </Carousel>
   );

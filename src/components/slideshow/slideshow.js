@@ -38,11 +38,11 @@ const Slider = ({ showMobileNav }) => {
     <React.Fragment>
       {showMobileNav && <SideBar width="100%" />}
 
-      <div className="slider">
+      {/* <div className="slider">
         <div className="slide">
           <Autocarosel />
         </div>
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };

@@ -56,15 +56,6 @@ li {
   z-index: 2;
 }
 
-.left-side-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #fd683d;
-  width: 40%;
-  height: 100vh;
-}
-
 .right-side-bar {
   background-color: rgba(0, 0, 0, 0.1);
   overflow: scroll;
