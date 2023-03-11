@@ -1,15 +1,15 @@
 .mobile-search {
-  padding: 1rem;
-  /* display: none; */
+  width: 100%;
 }
 
 .mobile-search-control {
   display: flex;
   border: 1px solid rgba(1, 1, 1, 0.8);
   align-items: center;
-  padding: 0.4rem 1rem 0.4rem 1rem;
-  border-radius: 20px;
+  padding: 0.8rem 1rem 0.8rem 1rem;
+  border-radius: 10px;
   background-color: #fff;
+  width: 80%;
 }
 
 .mobile-search-control input {
@@ -22,9 +22,11 @@
   color: #da7ff9;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 750px) {
   .mobile-search {
     display: block;
-    width: 10rem;
+  }
+
+  .mobile-search-control {
   }
 }

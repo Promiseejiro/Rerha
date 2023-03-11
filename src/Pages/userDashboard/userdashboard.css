@@ -1,0 +1,11 @@
+.user-dashboard-body {
+  margin-top: 4rem;
+  padding: 2em 2rem;
+}
+
+.body-search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}

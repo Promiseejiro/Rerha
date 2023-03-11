@@ -12,14 +12,14 @@ import { homepageDesktopNavData } from "../../utils/data";
 //
 import axios from "axios";
 // css file
-import "./login-form.css";
+// import "./login-form.css";
 //icons
 import { FaUserAlt } from "react-icons/fa";
 //import {MdEmail} from "react-icons/md"
 import { RiLockPasswordFill } from "react-icons/ri";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
-const SignInForm = () => {
+const SignUpForm = () => {
   const navigate = useNavigate();
   const defaultUser = {
     password: "",
@@ -53,15 +53,13 @@ const SignInForm = () => {
           },
         }
       );
-      console.log(data.data.success);
-      localStorage.setItem("user", JSON.stringify(data.data.data));
-      if (data.data.success) {
-        navigate(`/${data.data.data.email}`);
-      } else {
-        alert("incoress details");
+      console.log(data);
+      localStorage.setItem("token", JSON.stringify(data.data.data.token));
+      if (data) {
+        navigate("/adminpage");
       }
     } catch (error) {
-      alert("incorrect password");
+      console.log(error.response);
     }
   };
 
@@ -94,7 +92,7 @@ const SignInForm = () => {
         <div className="form-container">
           <div className="form-wrapper">
             <div className="form-type">
-              <h3>Sign in</h3>
+              <h3>Sign Up</h3>
             </div>
             <form
               onSubmit={handleSubmit}
@@ -114,6 +112,13 @@ const SignInForm = () => {
                 handleChange={handleChange}
                 // <RiLockPasswordFill />
               ></Input>
+              <Input
+                icon={<AiFillEyeInvisible />}
+                type="password"
+                name="confirm password"
+                handleChange={handleChange}
+                // <RiLockPasswordFill />
+              ></Input>
               <button
                 type="submit"
                 className="btn"
@@ -122,7 +127,7 @@ const SignInForm = () => {
                   backgroundColor: "#da7ff9",
                 }}
               >
-                Log in
+                Sign-up
               </button>
             </form>
           </div>
@@ -132,4 +137,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default SignUpForm;

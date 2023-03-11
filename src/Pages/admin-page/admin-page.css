@@ -11,7 +11,6 @@
 
 .design-setup {
   margin-top: 5rem;
-  background-color: rgba(0, 0, 0, 0.6);
   padding: 2rem;
   border-radius: 10px;
 }
@@ -62,41 +61,28 @@
 
 .r-right {
   left: 150px;
-  top: 20px;
-  width: 6px;
+  top: 16px;
+  width: 2px;
   height: 100px;
   cursor: e-resize;
 }
 
-.r-left {
-  position: absolute;
-  right: 300;
-  top: 0;
-  width: 6px;
-  height: 100px;
-}
-
-.r-top {
-  height: 6px;
-  width: 112px;
-}
-
 .r-bottom {
-  width: 100px;
-  height: 6px;
+  width: 115px;
+  height: 2px;
   cursor: ns-resize;
 }
 
 .name-r {
-  width: 6px;
-  height: 5rem;
+  width: 2px;
+  height: 85px;
   left: 5rem;
   top: 0px;
   cursor: e-resize;
 }
 .name-b {
   width: 5rem;
-  height: 6px;
+  height: 2px;
   left: 0;
   top: 77px;
   cursor: ns-resize;
@@ -174,7 +160,12 @@
 }
 
 @media (min-width: 650px) {
-  /* .design-setup {
+  .design-setup {
     display: flex;
-  } */
+    align-items: center;
+  }
+
+  .design-setup-container {
+    margin-right: 1em;
+  }
 }

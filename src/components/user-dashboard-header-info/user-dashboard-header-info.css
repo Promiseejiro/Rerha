@@ -1,0 +1,34 @@
+.user-info-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.user-dashbord-img {
+}
+
+.user-dashbord-img img {
+  width: 2em;
+  height: 2em;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.user-dashboard-name-container {
+  margin-left: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-dashboard-name-container h4 {
+  font-size: 14px;
+  color: #fff;
+  margin-top: 6px;
+}
+
+.user-dashboard-name-container h6 {
+  font-size: 10px;
+  color: #fff;
+  margin-top: -6px;
+}

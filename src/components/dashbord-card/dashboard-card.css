@@ -1,0 +1,45 @@
+.user-dashboard-card {
+  padding: 1rem;
+  background-color: #fff;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-sizing: 1px 1px 1px rgba(0, 0, 0, 0, 0.1);
+}
+
+.dashboard-design-info {
+}
+
+.dashboard-design-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "first first first third"
+    "second second second second";
+}
+
+.design-info-name {
+  grid-area: first;
+  display: flex;
+}
+
+.design-time-posted {
+  grid-area: second;
+}
+
+.dashboard-design-info > button {
+  grid-area: third;
+}
+
+.dashboard-card img {
+  height: 3rem;
+  width: 3rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+@media (min-width: 650px) {
+  .dashboard-design-info {
+    grid-template-columns: 4fr 2fr .5fr;
+    grid-template-areas: "first second  third";
+  }
+}

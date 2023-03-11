@@ -1,0 +1,39 @@
+.footer-container {
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "first second"
+    "third third"
+    "fourth fourth";
+  text-align: center;
+  padding-top: 3rem;
+  margin-top: 2rem;
+}
+
+.footer-1 {
+  grid-area: first;
+}
+.footer-2 {
+  grid-area: second;
+}
+.footer-3 {
+  grid-area: third;
+}
+.footer-4 {
+  grid-area: fourth;
+  padding-bottom: 3rem;
+}
+
+.footer-container li {
+  padding: 0.5rem;
+}
+
+@media (min-width: 650px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      " first second third"
+      " fourth fourth fourth";
+  }
+}

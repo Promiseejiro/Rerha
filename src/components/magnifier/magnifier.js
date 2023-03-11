@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import image from "../../image/image-2.jpeg";
 import html2canvas from "html2canvas";
 import { stringify } from "query-string";
@@ -21,15 +21,15 @@ function ImageMagnifier({
   const screenShot = () => {
     html2canvas(screenShotRef.current).then((canvas) => {
       const imagedesign = document.createElement("a");
-      // imagedesign.download = "cfi.jpg";
       imagedesign.href = canvas.toDataURL();
       imagedesign.target = "_blank";
-      // imagedesign.click();
-      setNewImag(imagedesign);
       localStorage.setItem("magnifiedimg", JSON.stringify(imagedesign.href));
-      console.log();
+      setNewImag(imagedesign.href);
     });
   };
+  useEffect(() => {
+    capturedMagnifyerHandler();
+  }, [newImage]);
 
   return (
     // the container
@@ -68,16 +68,14 @@ function ImageMagnifier({
               setShowMagnifier(true);
             }}
             onTouchEnd={() => {
+              screenShot();
               setShowMagnifier(false);
               console.log("down");
-              capturedMagnifyerHandler();
-              screenShot();
             }}
             onMouseUp={() => {
+              screenShot();
               setShowMagnifier(false);
               console.log("up");
-              capturedMagnifyerHandler();
-              screenShot();
             }}
             onTouchMove={(e) => {
               console.log("moving");
@@ -129,12 +127,6 @@ function ImageMagnifier({
           />
         </div>
       </div>
-      <img
-        src={newImage.href}
-        // style={{
-        //   borderRadius: "50%",
-        // }}
-      />
     </React.Fragment>
   );
 }

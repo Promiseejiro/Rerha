@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import "./header.css";
 // icons
-import SearchComponent from "../search-component/search";
-import { AiOutlineMenu } from "react-icons/ai";
+
 // components
 import DesktopNav from "../desktop-nav-link/desktop-nav-link";
 import Btn from "../mobile-nav-btn/btn";
+import SearchComponent from "../search-component/search";
+import { AiOutlineMenu } from "react-icons/ai";
 
-const Header = ({ event }) => {
+const Header = ({
+  event,
+  navcontentSecondChildContainer,
+  navcontentThirdChildContainer,
+}) => {
   const [showNav, setShowNav] = useState(false);
   const [id, setId] = useState(0);
   return (
@@ -18,9 +23,11 @@ const Header = ({ event }) => {
       </div>
       <div className="header-content">
         <h1 className="logo">R</h1>
-        <DesktopNav />
+        {/* <DesktopNav /> */}
+        {navcontentSecondChildContainer}
         <div className="header-search-container-style">
-          <SearchComponent />
+          {/* <SearchComponent /> */}
+          {navcontentThirdChildContainer}
         </div>
 
         <div className="mobile-nav-btn">

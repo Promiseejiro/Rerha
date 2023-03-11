@@ -5,19 +5,21 @@ import "./App.css";
 //pages
 import Homepage from "./Pages/homepage/homepage";
 import SelectDesign from "./Pages/select-design/select-design";
-import SignUpForm from "./Pages/login-form/login-form";
+import SignInForm from "./Pages/login-form/login-form";
+import SignUpForm from "./Pages/sign-up-page/sign-up-page";
 import AdminPage from "./Pages/admin-page/admin-page";
 import PublicDesign from "./Pages/public-design/public-design";
-import Header from "./components/header/header";
 import PixoImage from "./components/pixo/pixo";
+import UserDashboard from "./Pages/userDashboard/userdassboard";
+import Footer from "./components/footer/footer";
 
 function App() {
   const [src, onChange] = useState("https://via.placeholder.com/350x150");
   const [loading, setIsLoading] = useState(true);
   const [showMobileNav, setShowMobileNav] = useState(false);
-  const showMobileNavHandler = () => {
-    setShowMobileNav(!showMobileNav);
-  };
+  // const showMobileNavHandler = () => {
+  //   setShowMobileNav(!showMobileNav);
+  // };
   useEffect(() => {
     setTimeout(function () {
       setIsLoading(false);
@@ -26,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header event={showMobileNavHandler} />
+        {/* <Header event={showMobileNavHandler} /> */}
         <Routes>
           <Route
             path="design/:designId"
@@ -36,9 +38,10 @@ function App() {
             path="/"
             element={<Homepage showMobileNav={showMobileNav}> </Homepage>}
           ></Route>
-          <Route path="login" element={<SignUpForm />}></Route>
+          <Route path="login" element={<SignInForm />}></Route>
+          <Route path="sign-up" element={<SignUpForm />}></Route>
           <Route
-            path="adminpage"
+            path="/:user/new"
             element={<AdminPage showMobileNav={showMobileNav}></AdminPage>}
           ></Route>
           <Route
@@ -49,7 +52,9 @@ function App() {
             path="select"
             element={<SelectDesign showMobileNav={showMobileNav} />}
           ></Route>
+          <Route path="/:user" element={<UserDashboard />}></Route>
         </Routes>
+        <Footer></Footer>
       </Router>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./mobile-nav.css";
 import { IoIosArrowDown } from "react-icons/io";
 import SearchComponent from "../search-component/search";
+import Btn from "../btn/btn";
 
 const MobileNav = () => {
   const [showSubMenu, setShowSubMenu] = useState("");
@@ -17,7 +18,10 @@ const MobileNav = () => {
 
   return (
     <div className="mobile-nav">
-      <SearchComponent />
+      <div className="login-sign-in-btn-container">
+        <Btn color={"#da7ff9"} text="Sign-in" BgColor={"#fff"}></Btn>
+        <Btn color={"#fff"} BgColor={"#da7ff9"} text="Login"></Btn>
+      </div>
       <ul className="main-menu">
         {arr.map((menu, index) => (
           <div key={index}>

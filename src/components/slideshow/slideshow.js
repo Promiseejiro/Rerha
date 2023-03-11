@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { slides } from "../../utils/slide-show-data";
+import { slides } from "../../utils/data";
 
 import "./slideshow.css";
 import SideBar from "../sideBar/sidebar";

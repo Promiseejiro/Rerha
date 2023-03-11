@@ -3,14 +3,26 @@ import plusIcon from "../../image/plus-icon.png";
 import defaultDesign from "../../image/placeholder.png";
 import "./admin-page.css";
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+// icons
 
+import { AiOutlinePlus } from "react-icons/ai";
 // component
-
+import { userDesktopNavData } from "../../utils/data";
+// components
+import Header from "../../components/header/header";
+import UserDashboardHeaderNav from "../../components/userdashboardHeaderNav/user-dashBoard-nav";
+import UserDashboardHeaderInfo from "../../components/user-dashboard-header-info/user-dashboard-header-info";
+import DesktopNav from "../../components/desktop-nav-link/desktop-nav-link";
+import SearchComponent from "../../components/search-component/search";
+import DashboardCards from "../../components/dashbord-card/dashboard-cards";
+import Input from "../../components/input-component/input";
 // utils
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
-const AdminPage = ({ showMobileNav }) => {
+const AdminPage = () => {
+  const navigate = useNavigate();
   const avartaRef = useRef();
   const resizerRight = useRef();
   const resizerLeft = useRef();
@@ -18,7 +30,6 @@ const AdminPage = ({ showMobileNav }) => {
   const relativeContainer = useRef();
   const nameref = useRef();
   const nameResizerbottom = useRef();
-
   const [changeBoxSize, setChangeBoxSize] = useState({
     right: false,
     left: false,
@@ -27,14 +38,19 @@ const AdminPage = ({ showMobileNav }) => {
     moveImage: false,
     moveName: false,
   });
+
   const [position, setPosition] = useState({});
   const [design, setDesign] = useState(defaultDesign);
+  const [designDtails, setDesignDtails] = useState({});
   const [uploadMessage, setUploadMessage] = useState({});
   const [file, setDesignFile] = useState(defaultDesign);
+  const [showMobileNav, setShowMobileNav] = useState(false);
 
-  const token = JSON.parse(localStorage.getItem("token"));
-  console.log(token);
-
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user.token);
+  const showMobileNavHandler = () => {
+    setShowMobileNav(!showMobileNav);
+  };
   const mouseMove = (e) => {
     const x = e.pageX;
     const y = e.pageY;
@@ -142,14 +158,22 @@ const AdminPage = ({ showMobileNav }) => {
     setDesignFile(e.target.files[0]);
     setDesign(URL.createObjectURL(e.target.files[0]));
   };
+
+  const handleChange = (e) => {
+    setDesignDtails({
+      ...designDtails,
+      [e.target.name]: e.target.value,
+    });
+  };
   const handleSubmit = async (e) => {
     console.log(file);
     e.preventDefault();
     const formData = new FormData();
     const filename = Date.now() + design.name;
+    const design_id = uuidv4();
     formData.append("file", file, file.name);
     formData.append("name", uuidv4());
-    formData.append("design_id", uuidv4());
+    formData.append("design_id", design_id);
     formData.append("top", position.top);
     formData.append("left", position.left);
     formData.append("width", position.width);
@@ -172,29 +196,25 @@ const AdminPage = ({ showMobileNav }) => {
         formData,
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${user.token}`,
             "Content-Type": "multipart/form-data",
             Accept: "multipart/form-data",
           },
         }
       );
-      console.log(data);
-      alert("successfully uploaded");
+      if (data.data.success) {
+        navigate(`/design/${design_id}`);
+      }
     } catch (error) {
       console.log(error.message);
-      alert("successfully uploaded");
     }
   };
 
   useEffect(() => {
-    const { left, top, right, bottom, width, height } =
-      avartaRef.current.getBoundingClientRect();
-    const nameLeft = nameref.current.getBoundingClientRect().left;
-    const nameRight = nameref.current.getBoundingClientRect().right;
-    const nameTop = nameref.current.getBoundingClientRect().top;
+    const { top, bottom, width } = avartaRef.current.getBoundingClientRect();
+
     const nameBottom = nameref.current.getBoundingClientRect().bottom;
     const nameWidth = nameref.current.getBoundingClientRect().width;
-    const nameHeight = nameref.current.getBoundingClientRect().heigth;
 
     console.log(nameref.current.getBoundingClientRect());
     setPosition({
@@ -214,6 +234,15 @@ const AdminPage = ({ showMobileNav }) => {
   }, []);
   return (
     <React.Fragment>
+      <Header
+        event={showMobileNavHandler}
+        navcontentSecondChildContainer={
+          <DesktopNav desktopNavContent={userDesktopNavData} />
+        }
+        navcontentThirdChildContainer={
+          <UserDashboardHeaderInfo user={user.email} />
+        }
+      />
       <div className="modal">
         <p>successfully uploaded</p>
       </div>
@@ -243,12 +272,12 @@ const AdminPage = ({ showMobileNav }) => {
                 onChange={handleDesignSelector}
               />
               <label htmlFor="file" className="file-btn">
-                <img
-                  src={plusIcon}
+                <AiOutlinePlus
+                  // src={plusIcon}
                   style={{
                     width: "100%",
                     height: "100%",
-                    color: "red",
+                    color: "#fff",
                   }}
                 />
               </label>
@@ -391,7 +420,20 @@ const AdminPage = ({ showMobileNav }) => {
               }}
               onTouchEnd={mouseUp}
             ></div>
-
+          </div>
+          <div>
+            <Input
+              icon={null}
+              type="name"
+              name="name"
+              handleChange={handleChange}
+            ></Input>
+            <Input
+              icon={null}
+              type="discription"
+              name="discription"
+              handleChange={handleChange}
+            ></Input>
             <button
               type="submit"
               className="generate-submit"
