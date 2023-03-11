@@ -38,14 +38,16 @@ function ImageMagnifier({
         <div
           style={{
             position: "relative",
-            height: height,
-            width: width,
+            border: "7px solid red",
+            width: "100%",
           }}
         >
           <img
             className="image-being-magnified"
             src={src}
-            style={{ height: "100%", width: "100%" }}
+            style={{
+              border: "2px solid green",
+            }}
             onClick={(e) => {
               const ele = e.currentTarget;
 
@@ -75,7 +77,6 @@ function ImageMagnifier({
             onMouseUp={() => {
               screenShot();
               setShowMagnifier(false);
-              console.log("up");
             }}
             onTouchMove={(e) => {
               console.log("moving");

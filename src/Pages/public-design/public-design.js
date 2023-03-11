@@ -52,7 +52,8 @@ const PublicDesign = () => {
   };
   const capturedMagnifyerHandler = () => {
     setMagfiedImag(JSON.parse(localStorage.getItem("magnifiedimg")));
-    localStorage.removeItem("magnifiedimg");
+    console.log(JSON.parse(localStorage.getItem("magnifiedimg")));
+    // localStorage.removeItem("magnifiedimg");
   };
 
   const handleSefie = () => {
@@ -96,7 +97,6 @@ const PublicDesign = () => {
   }, []);
 
   // for closing magnifyer
-  useEffect(() => {}, [magnifiedImg]);
   return (
     <React.Fragment>
       <Header
@@ -177,7 +177,7 @@ const PublicDesign = () => {
           <div className="design-image-setup screen-Shot">
             <img src={image} className="design-setup-image" />
 
-            <img src={selectedImage} className="selected-image" />
+            <img src={magnifiedImg} className="selected-image" />
           </div>
         </div>
         {/* the design-setup styling is applied from admain css */}
@@ -209,12 +209,12 @@ const PublicDesign = () => {
           </div>
         </div>
       </div>
+
       {takesefie && (
         <div className="selfie-container">
           <WebcamCapture closeCamera={closeCamera} />
         </div>
       )}
-
       {magnifying && (
         <div className="magnifier-controller">
           <ImageMagnifier
