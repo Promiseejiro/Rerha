@@ -65,8 +65,6 @@ const HomePage = () => {
               to={"/select"}
             ></Btn>
           </div>
-          {/* <Link to='/admin/page'><button>admin page</button></Link>
-  <Link to='/auth/login'><button>login page</button></Link> */}
         </div>
       </div>
     </div>

@@ -81,8 +81,7 @@
   width: 100%;
 }
 
-.design-details div,
-p {
+.design-details p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

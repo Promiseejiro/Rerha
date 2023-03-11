@@ -1,4 +1,6 @@
 .homepage-background {
+  /* overflow: hidden; */
+  width: 100%;
 }
 
 .login-sign-in-btn-container {
@@ -8,9 +10,6 @@
 
 .homepage-hero {
   width: 100%;
-  /* position: fixed;
-  top: 4rem;
-  left: 0; */
   padding-top: 5em;
   margin-top: 4rem;
   display: flex;
@@ -33,6 +32,8 @@
 
 .hero-content p {
   padding: 0 0 2em 0;
+  text-align: center;
+  width: 100%;
 }
 
 .rerha {
