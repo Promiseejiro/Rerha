@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import image from "../../image/image-2.jpeg";
 import html2canvas from "html2canvas";
 import { stringify } from "query-string";
-
+import "./magnifier.css";
 function ImageMagnifier({
   src,
   width,
@@ -38,16 +38,12 @@ function ImageMagnifier({
         <div
           style={{
             position: "relative",
-            border: "7px solid red",
             width: "100%",
           }}
         >
           <img
             className="image-being-magnified"
             src={src}
-            style={{
-              border: "2px solid green",
-            }}
             onClick={(e) => {
               const ele = e.currentTarget;
 

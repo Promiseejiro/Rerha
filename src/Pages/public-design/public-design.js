@@ -217,6 +217,10 @@ const PublicDesign = () => {
       )}
       {magnifying && (
         <div className="magnifier-controller">
+          <div className="magnified-ok-btn">
+            <Btn text={"OK"} color="#da7ff9"></Btn>
+          </div>
+
           <ImageMagnifier
             magnifierHeight={magnifierHeight}
             magnifieWidth={magnifieWidth}
