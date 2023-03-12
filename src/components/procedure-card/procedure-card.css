@@ -17,3 +17,9 @@
   font-size: 16px;
   margin: 1em;
 }
+
+@media (min-width: 650px) {
+  .procedure-card p {
+    width: 40%;
+  }
+}

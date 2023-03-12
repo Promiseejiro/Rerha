@@ -14,7 +14,7 @@ import SearchComponent from "../../components/search-component/search";
 import Btn from "../../components/btn/btn";
 // import Paginate from "../../components/pagination/pagination";
 const SelectDesign = () => {
-  const [designs, setDesigns] = useState([1]);
+  const [designs, setDesigns] = useState([1, 2, 4, 3, 5]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(12);
   const [indexOfFirstPost, setIndexOfFirstPage] = useState(0);
@@ -28,18 +28,21 @@ const SelectDesign = () => {
   };
 
   const getDesigns = async () => {
-    const data = await axios.get(
-      "https://connectionpourtous.com/api/v1/admin/get"
-    );
-    if (!data.data.data.images) {
-      setDesigns([]);
-    }
+    try {
+      const data = await axios.get(
+        "https://connectionpourtous.com/api/v1/admin/get"
+      );
+      if (!data.data.data.images) {
+        setDesigns([]);
+      }
 
-    setFilteredDesign(
-      data.data.data.images.slice(indexOfFirstPost, indexOfLastPost)
-    );
-    setDesigns(data.data.data.images);
-    setCount(Math.ceil(data.data.data.images.length / postPerPage));
+      setFilteredDesign(
+        data.data.data.images.slice(indexOfFirstPost, indexOfLastPost)
+      );
+      setDesigns(data.data.data.images);
+      setCount(Math.ceil(data.data.data.images.length / postPerPage));
+    } catch (error) {}
+    setDesigns([1, 2, 4, 3, 5]);
   };
 
   const paginateHandler = (event, value) => {

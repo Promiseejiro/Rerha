@@ -35,14 +35,14 @@ const HomePage = () => {
         navcontentThirdChildContainer={
           <div className="login-sign-in-btn-container">
             <Btn
-              color={"#da7ff9"}
+              color={"#E00070"}
               text="Sign-up"
               BgColor={"#fff"}
               to={"/sign-up"}
             ></Btn>
             <Btn
               color={"#fff"}
-              BgColor={"#da7ff9"}
+              BgColor={"#E00070"}
               text="Login"
               to={"/login"}
             ></Btn>
@@ -62,7 +62,7 @@ const HomePage = () => {
               generator.
             </p>
             <Btn
-              BgColor={"#da7ff9"}
+              BgColor={"#E00070"}
               text="Explore"
               color={"#fff"}
               to={"/select"}

@@ -35,6 +35,10 @@ function App() {
             element={<PublicDesign showMobileNav={showMobileNav} />}
           ></Route>
           <Route
+            path="design"
+            element={<PublicDesign showMobileNav={showMobileNav} />}
+          ></Route>
+          <Route
             path="/"
             element={<Homepage showMobileNav={showMobileNav}> </Homepage>}
           ></Route>

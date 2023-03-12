@@ -11,6 +11,7 @@ import Header from "../../components/header/header";
 import DesktopNav from "../../components/desktop-nav-link/desktop-nav-link";
 import SearchComponent from "../../components/search-component/search";
 import Btn from "../../components/btn/btn";
+import Headings from "../../components/heading/heading";
 
 import html2canvas from "html2canvas";
 import ImageMagnifier from "../../components/magnifier/magnifier";
@@ -32,6 +33,7 @@ const PublicDesign = () => {
   const [magnifying, setMagnifying] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [closemagnifierBtn, setClosemagnifierBtn] = useState(false);
+
   const showMobileNavHandler = () => {
     setShowMobileNav(!showMobileNav);
   };
@@ -84,10 +86,14 @@ const PublicDesign = () => {
   };
 
   const getSingle = async () => {
-    const data = await axios.get(
-      `https://connectionpourtous.com/api/v1/admin/getOne?design_id=${designId}`
-    );
-    setDesign(data.data.data.image);
+    try {
+      const data = await axios.get(
+        `https://connectionpourtous.com/api/v1/admin/getOne?design_id=${designId}`
+      );
+      setDesign(data.data.data.image);
+    } catch (erro) {
+      setDesign([1]);
+    }
   };
 
   useEffect(() => {
@@ -112,20 +118,83 @@ const PublicDesign = () => {
         navcontentThirdChildContainer={
           <div className="login-sign-in-btn-container">
             <Btn
-              color={"#da7ff9"}
+              color={"#e00070"}
               text="Sign-up"
               BgColor={"#fff"}
               to={"/sign-up"}
             ></Btn>
             <Btn
               color={"#fff"}
-              BgColor={"#da7ff9"}
+              BgColor={"#e00070"}
               text="Login"
               to={"/login"}
             ></Btn>
           </div>
         }
       />
+
+      <div className="barner-creator-and-design-discription">
+        <div className="design-discription-container">
+          <div className="design-discription-img"></div>
+          <div className="design-discription-content">
+            <div className="design-discription-heading">
+              <Headings text={"jamb sumbmit "}></Headings>
+            </div>
+            <p>
+              ring means andto some other use of this publication without
+              written permission of the copyright owner. Any breach of this will
+              entail legal action and
+            </p>
+            <div className="design-discription-heading-posted-user">
+              <img src={image} />
+              <div>
+                <p>promise</p>
+                {/* <p>Organizer</p> */}
+              </div>
+            </div>
+            <div className="design-discription-time-container">
+              <div>
+                <AiTwotoneCamera
+                  style={{
+                    color: "#e00070",
+                  }}
+                />
+                <span>3 feb 3003</span>
+              </div>
+              <div>
+                <AiTwotoneCamera
+                  style={{
+                    color: "#e00070",
+                  }}
+                />
+                <span>3 feb 3003</span>
+              </div>
+            </div>
+            <div className="design-discription-view">
+              <div>
+                <span>3440</span>
+                <span
+                  style={{
+                    color: "#e00070",
+                  }}
+                >
+                  views
+                </span>
+              </div>
+              <div>
+                <span>3440</span>
+                <span
+                  style={{
+                    color: "#e00070",
+                  }}
+                >
+                  views
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="public-design-setup">
         <div className="design-image-setup" ref={screenShotRef}>
           {design.map((item, index) => (
@@ -226,7 +295,7 @@ const PublicDesign = () => {
             <div className="magnified-ok-btn">
               <Btn
                 text={"OK"}
-                color="#da7ff9"
+                color="#e00070"
                 event={closeMagnifierHandler}
               ></Btn>
             </div>

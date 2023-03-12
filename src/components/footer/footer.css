@@ -1,5 +1,5 @@
 .footer-container {
-  background-color: #fff;
+  background-color: #e00070;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -9,6 +9,14 @@
   text-align: center;
   padding-top: 3rem;
   margin-top: 2rem;
+}
+
+.footer-container > p,
+div,
+li,
+ul,
+a {
+  /* color: #fff; */
 }
 
 .footer-1 {

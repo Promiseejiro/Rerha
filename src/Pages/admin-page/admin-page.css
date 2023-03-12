@@ -54,7 +54,7 @@
 
 .resizer {
   position: absolute;
-  background-color: #da7ff9;
+  background-color: #e00070;
   border-radius: 10px;
   z-index: 2;
 }
@@ -112,7 +112,7 @@
 }
 
 .file-btn {
-  background-color: #da7ff9;
+  background-color: #e00070;
   color: #fff;
   width: 100%;
   padding: 0.5rem;
@@ -122,7 +122,7 @@
 }
 
 .image-positioning-form {
-  border: 2px solid #da7ff9;
+  border: 2px solid #e00070;
   padding: 1rem;
 }
 
@@ -136,11 +136,11 @@
 }
 
 .image-form-control label {
-  color: #da7ff9;
+  color: #e00070;
 }
 
 .image-form-control input {
-  border: 2px solid #da7ff9;
+  border: 2px solid #e00070;
   border-radius: 5px;
   padding: 0.5rem;
 }
@@ -153,7 +153,7 @@
 
 .generate-submit {
   padding: 0.5rem;
-  background-color: #da7ff9;
+  background-color: #e00070;
   color: #fff;
   width: 100%;
   border-radius: 5px;

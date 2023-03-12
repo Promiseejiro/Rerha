@@ -6,6 +6,81 @@
   overflow: scroll;
 }
 
+.design-discription-container {
+  width: 100%;
+  position: relative;
+  margin-top: 4em;
+  overflow: hidden;
+}
+
+.design-discription-heading-posted-user {
+  display: flex;
+  align-items: center;
+  padding: 0.7em 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.4em;
+}
+
+.design-discription-heading-posted-user img {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.design-discription-heading-posted-user > div {
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+  gap: 0;
+}
+
+.design-discription-img {
+  background-image: url(../../image/image-1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 10em;
+  width: 100%;
+}
+
+.design-discription-content p {
+  /* text-align: center; */
+  padding: 0.5em 0;
+}
+
+.design-discription-content {
+  width: 100%;
+  background-color: #fff;
+  z-index: 4;
+  padding: 2em 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.design-discription-time-container {
+  display: flex;
+  align-items: center;
+}
+.design-discription-time-container > div {
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.design-discription-view {
+  display: flex;
+  align-items: center;
+}
+.design-discription-view > div {
+  display: flex;
+  align-items: center;
+  margin-right: 2em;
+}
+
+/* .design-discription-container span {
+  padding-right: 1em;
+} */
+
 .screen-Shot {
   width: 1px;
   height: 1px;
@@ -67,7 +142,7 @@
 .form-input input {
   padding: 0.2rem;
   width: 100%;
-  border: 2px solid #da7ff9;
+  border: 2px solid #e00070;
   border-radius: 5px;
 }
 
@@ -84,12 +159,12 @@
 
 .sefie-btn {
   color: #fff;
-  background-color: #da7ff9;
+  background-color: #e00070;
 }
 
 .download-btn {
-  border: 2px solid #da7ff9;
-  color: #da7ff9;
+  border: 2px solid #e00070;
+  color: #e00070;
   margin-top: 1rem;
 }
 
