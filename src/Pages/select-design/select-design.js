@@ -100,14 +100,11 @@ const SelectDesign = () => {
                       className="selection-design-item"
                     />
                   </Link>
-
                   <div className="design-details">
-                    <h4>Jam Submit</h4>
+                    <h4>{design.name}</h4>
+                    {/*im using this as discription property border_raduis_top_right */}
                     <p className="design-details-paragraph">
-                      jamb submit mibilization and submit preperation for
-                      maximium palnning jamb submit mibilization and submit
-                      preperation for maximium palnning jamb submit mibilization
-                      and submit preperation for maximium palnning
+                      {design.border_raduis_top_right}
                     </p>
                     <div className="engage-container">
                       <button>share</button>

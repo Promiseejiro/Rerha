@@ -41,7 +41,7 @@ const AdminPage = () => {
 
   const [position, setPosition] = useState({});
   const [design, setDesign] = useState(defaultDesign);
-  const [designDtails, setDesignDtails] = useState({});
+  const [designDetails, setDesignDetails] = useState({});
   const [uploadMessage, setUploadMessage] = useState({});
   const [file, setDesignFile] = useState(defaultDesign);
   const [showMobileNav, setShowMobileNav] = useState(false);
@@ -160,8 +160,8 @@ const AdminPage = () => {
   };
 
   const handleChange = (e) => {
-    setDesignDtails({
-      ...designDtails,
+    setDesignDetails({
+      ...designDetails,
       [e.target.name]: e.target.value,
     });
   };
@@ -172,14 +172,14 @@ const AdminPage = () => {
     const filename = Date.now() + design.name;
     const design_id = uuidv4();
     formData.append("file", file, file.name);
-    formData.append("name", uuidv4());
+    formData.append("name", designDetails.name);
     formData.append("design_id", design_id);
     formData.append("top", position.top);
     formData.append("left", position.left);
     formData.append("width", position.width);
     formData.append("height", position.height);
 
-    formData.append("border_raduis_top_right", 2);
+    formData.append("border_raduis_top_right", designDetails.discription);
     formData.append("border_raduis_top_left", 2);
     formData.append("border_raduis_bottom_right", 1);
     formData.append("border_raduis_bottom_left", 1);

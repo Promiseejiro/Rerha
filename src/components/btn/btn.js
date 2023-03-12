@@ -1,6 +1,6 @@
 import "./btn.css";
 import { Link } from "react-router-dom";
-const Btn = ({ to, text, BgColor, color }) => {
+const Btn = ({ to, text, BgColor, color, event }) => {
   return (
     <Link to={to}>
       <button
@@ -10,6 +10,7 @@ const Btn = ({ to, text, BgColor, color }) => {
           color: color,
           border: `2px solid ${color}`,
         }}
+        onClick={event}
       >
         {text}
       </button>

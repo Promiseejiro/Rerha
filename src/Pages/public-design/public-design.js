@@ -26,13 +26,12 @@ const PublicDesign = () => {
   const screenShotRef = useRef(null);
   const [sefieSrc, setSefieSrc] = useState("");
   const [name, setName] = useState("john doe");
-  const [selectedImage, setSelectedImage] = useState("");
   const [takesefie, setTakeSefie] = useState(false);
   const [magnifierHeight, setmagnifierHeight] = useState("");
   const [magnifieWidth, setmagnifieWidth] = useState("");
   const [magnifying, setMagnifying] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
-
+  const [closemagnifierBtn, setClosemagnifierBtn] = useState(false);
   const showMobileNavHandler = () => {
     setShowMobileNav(!showMobileNav);
   };
@@ -53,7 +52,13 @@ const PublicDesign = () => {
   const capturedMagnifyerHandler = () => {
     setMagfiedImag(JSON.parse(localStorage.getItem("magnifiedimg")));
     console.log(JSON.parse(localStorage.getItem("magnifiedimg")));
-    // localStorage.removeItem("magnifiedimg");
+    setClosemagnifierBtn(true);
+  };
+
+  const closeMagnifierHandler = () => {
+    setMagnifying(false);
+    localStorage.removeItem("magnifiedimg");
+    setClosemagnifierBtn(false);
   };
 
   const handleSefie = () => {
@@ -217,9 +222,15 @@ const PublicDesign = () => {
       )}
       {magnifying && (
         <div className="magnifier-controller">
-          <div className="magnified-ok-btn">
-            <Btn text={"OK"} color="#da7ff9"></Btn>
-          </div>
+          {magnifying && (
+            <div className="magnified-ok-btn">
+              <Btn
+                text={"OK"}
+                color="#da7ff9"
+                event={closeMagnifierHandler}
+              ></Btn>
+            </div>
+          )}
 
           <ImageMagnifier
             magnifierHeight={magnifierHeight}
