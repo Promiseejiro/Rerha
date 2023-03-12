@@ -90,6 +90,7 @@ const PublicDesign = () => {
       const data = await axios.get(
         `https://connectionpourtous.com/api/v1/admin/getOne?design_id=${designId}`
       );
+      console.log(data)
       setDesign(data.data.data.image);
     } catch (erro) {
       setDesign([1]);
