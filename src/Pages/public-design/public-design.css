@@ -77,10 +77,6 @@
   margin-right: 2em;
 }
 
-/* .design-discription-container span {
-  padding-right: 1em;
-} */
-
 .screen-Shot {
   width: 1px;
   height: 1px;
@@ -88,7 +84,7 @@
 }
 
 .selfie-container {
-  position: absolute;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,10 +179,39 @@
   justify-content: center;
 }
 
-.magnified-ok-btn {
-  position: absolute;
-  right: 2em;
-  top: 1em;
+.magnified-confirmation {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.magnified-confirmation-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.view-magnified-image {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin: 1em;
+}
+
+.magnified-confirmation-confirmation-btn-container {
+  display: flex;
+  margin: 1em 0;
 }
 
 @media (min-width: 750px) {

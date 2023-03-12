@@ -21,7 +21,6 @@ import { homepageDesktopNavData } from "../../utils/data";
 
 const PublicDesign = () => {
   const { designId } = useParams();
-  console.log(designId);
   const [magnifiedImg, setMagfiedImag] = useState("");
   const [design, setDesign] = useState([]);
   const screenShotRef = useRef(null);
@@ -32,7 +31,7 @@ const PublicDesign = () => {
   const [magnifieWidth, setmagnifieWidth] = useState("");
   const [magnifying, setMagnifying] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
-  const [closemagnifierBtn, setClosemagnifierBtn] = useState(false);
+  const [closemagnifier, setClosemagnifier] = useState(false);
 
   const showMobileNavHandler = () => {
     setShowMobileNav(!showMobileNav);
@@ -53,14 +52,13 @@ const PublicDesign = () => {
   };
   const capturedMagnifyerHandler = () => {
     setMagfiedImag(JSON.parse(localStorage.getItem("magnifiedimg")));
-    console.log(JSON.parse(localStorage.getItem("magnifiedimg")));
-    setClosemagnifierBtn(true);
   };
 
   const closeMagnifierHandler = () => {
     setMagnifying(false);
     localStorage.removeItem("magnifiedimg");
-    setClosemagnifierBtn(false);
+    setClosemagnifier(false);
+    console.log(closemagnifier);
   };
 
   const handleSefie = () => {
@@ -90,21 +88,16 @@ const PublicDesign = () => {
       const data = await axios.get(
         `https://connectionpourtous.com/api/v1/admin/getOne?design_id=${designId}`
       );
-      console.log(data)
-      setDesign(data.data.data.image);
+      console.log(data);
+      if (data.data.data.image) {
+        setDesign(data.data.data.image);
+      }
     } catch (erro) {
       setDesign([1]);
     }
   };
 
   useEffect(() => {
-    // const data = JSON.parse(localStorage.getItem("designs")).filter(
-    //   (item) => item.design_id === eval(designId)
-    // );
-    // localStorage.removeItem("magnifiedimg");
-    // console.log(design);
-    // setDesign(data);
-    // console.log(data);
     getSingle();
   }, []);
 
@@ -284,7 +277,21 @@ const PublicDesign = () => {
           </div>
         </div>
       </div>
-
+      {closemagnifier && (
+        <div className="magnified-confirmation">
+          <div className="magnified-confirmation-card">
+            <img className="view-magnified-image" src={magnifiedImg} />
+            <p>Click ok if magnified image is perfect or canncel if not</p>
+            <div className="magnified-confirmation-confirmation-btn-container">
+              <Btn
+                text={"OK"}
+                color="#e00070"
+                event={closeMagnifierHandler}
+              ></Btn>
+            </div>
+          </div>
+        </div>
+      )}
       {takesefie && (
         <div className="selfie-container">
           <WebcamCapture closeCamera={closeCamera} />
@@ -292,21 +299,16 @@ const PublicDesign = () => {
       )}
       {magnifying && (
         <div className="magnifier-controller">
-          {magnifying && (
-            <div className="magnified-ok-btn">
-              <Btn
-                text={"OK"}
-                color="#e00070"
-                event={closeMagnifierHandler}
-              ></Btn>
-            </div>
-          )}
-
           <ImageMagnifier
             magnifierHeight={magnifierHeight}
             magnifieWidth={magnifieWidth}
             src={sefieSrc}
             capturedMagnifyerHandler={capturedMagnifyerHandler}
+            closeMagnifierHandler={() => {
+              setClosemagnifier(true);
+              console.log(JSON.parse(localStorage.getItem("magnifiedimg")));
+              alert("succes");
+            }}
           />
         </div>
       )}

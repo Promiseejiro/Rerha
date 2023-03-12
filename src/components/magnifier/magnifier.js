@@ -11,6 +11,7 @@ function ImageMagnifier({
   magnifieWidth,
   zoomLevel = 1.5,
   capturedMagnifyerHandler,
+  closeMagnifierHandler,
 }) {
   const [showMagnifier, setShowMagnifier] = useState(false);
   const [newImage, setNewImag] = useState("");
@@ -26,6 +27,7 @@ function ImageMagnifier({
       localStorage.setItem("magnifiedimg", JSON.stringify(imagedesign.href));
       setNewImag(imagedesign.href);
     });
+    closeMagnifierHandler();
   };
   useEffect(() => {
     capturedMagnifyerHandler();
