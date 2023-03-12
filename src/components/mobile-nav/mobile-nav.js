@@ -19,8 +19,8 @@ const MobileNav = () => {
   return (
     <div className="mobile-nav">
       <div className="login-sign-in-btn-container">
-        <Btn color={"#da7ff9"} text="Sign-in" BgColor={"#fff"}></Btn>
-        <Btn color={"#fff"} BgColor={"#da7ff9"} text="Login"></Btn>
+        <Btn color={"#e00070"} text="Sign-in" BgColor={"#fff"}></Btn>
+        <Btn color={"#fff"} BgColor={"#e00070"} text="Login"></Btn>
       </div>
       <ul className="main-menu">
         {arr.map((menu, index) => (
