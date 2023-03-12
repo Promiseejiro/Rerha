@@ -77,14 +77,14 @@ const SignInForm = () => {
           navcontentThirdChildContainer={
             <div className="login-sign-in-btn-container">
               <Btn
-                color={"#da7ff9"}
+                color={"#e00070"}
                 text="Sign-up"
                 BgColor={"#fff"}
                 to={"/sign-up"}
               ></Btn>
               <Btn
                 color={"#fff"}
-                BgColor={"#da7ff9"}
+                BgColor={"#e00070"}
                 text="Login"
                 to={"/login"}
               ></Btn>
@@ -119,7 +119,7 @@ const SignInForm = () => {
                 className="btn"
                 style={{
                   color: "#fff",
-                  backgroundColor: "#da7ff9",
+                  backgroundColor: "#e00070",
                 }}
               >
                 Log in
