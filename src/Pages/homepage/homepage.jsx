@@ -5,7 +5,10 @@ import Slider from "../../components/slideshow/slideshow";
 import Header from "../../components/header/header";
 import DesktopNav from "../../components/desktop-nav-link/desktop-nav-link";
 import SearchComponent from "../../components/search-component/search";
+import SelectDesign from "../select-design/select-design";
 import Btn from "../../components/btn/btn";
+import Headings from "../../components/heading/heading";
+import ProcedureCard from "../../components/procedure-card/procedure-card";
 
 // data
 import { homepageDesktopNavData } from "../../utils/data";
@@ -37,7 +40,7 @@ const HomePage = () => {
               BgColor={"#fff"}
               to={"/sign-up"}
             ></Btn>
-            <Btn 
+            <Btn
               color={"#fff"}
               BgColor={"#da7ff9"}
               text="Login"
@@ -67,6 +70,10 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <Headings text="TRENDING"></Headings>
+      <SelectDesign></SelectDesign>
+      <Headings text="PROCEDURE"></Headings>
+      <ProcedureCard></ProcedureCard>
     </div>
   );
 };

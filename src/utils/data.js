@@ -1,3 +1,5 @@
+import { BsCardImage } from "react-icons/bs";
+
 export const slides = [
   {
     image: "https://i.ibb.co/58Mq6Mb/slide1.jpg",
@@ -62,5 +64,28 @@ export const userDesktopNavData = [
     name: "Log Out",
     path: "#",
     subMenu: [],
+  },
+];
+
+export const procedureData = [
+  {
+    icon: <BsCardImage className="procedure-icon" />,
+    text: "ring  means andto some other use of this publication) without written permission of the copyright owner. Any breach of this will entail legal action and ",
+  },
+  {
+    icon: <BsCardImage className="procedure-icon" />,
+    text: "ring  means andto some other use of this publication) without written permission of the copyright owner. Any breach of this will entail legal action and ",
+  },
+  {
+    icon: <BsCardImage className="procedure-icon" />,
+    text: "ring  means andto some other use of this publication) without written permission of the copyright owner. Any breach of this will entail legal action and ",
+  },
+  {
+    icon: <BsCardImage className="procedure-icon" />,
+    text: "ring  means andto some other use of this publication) without written permission of the copyright owner. Any breach of this will entail legal action and ",
+  },
+  {
+    icon: <BsCardImage className="procedure-icon" />,
+    text: "ring  means andto some other use of this publication) without written permission of the copyright owner. Any breach of this will entail legal action and ",
   },
 ];

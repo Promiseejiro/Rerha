@@ -54,7 +54,7 @@ const SelectDesign = () => {
   }, []);
   return (
     <React.Fragment>
-      <Header
+      {/* <Header
         event={showMobileNavHandler}
         navcontentSecondChildContainer={
           <DesktopNav desktopNavContent={homepageDesktopNavData} />
@@ -75,7 +75,7 @@ const SelectDesign = () => {
             ></Btn>
           </div>
         }
-      />
+      /> */}
       <div className="select-design">
         <div className="design-container">
           <div className="design-selection">
