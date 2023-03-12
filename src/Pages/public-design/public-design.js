@@ -5,7 +5,7 @@ import { AiTwotoneCamera, AiOutlineDownload } from "react-icons/ai";
 import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import image from "../../image/image-1.jpg";
-import defaultAvarta from "../image/dp.png";
+import defaultAvarta from "../image/dp";
 import WebcamCapture from "../../components/webcam/webcam";
 import Slider from "../../components/slideshow/slideshow";
 import Header from "../../components/header/header";
