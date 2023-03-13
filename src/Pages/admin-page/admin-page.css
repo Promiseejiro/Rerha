@@ -21,7 +21,7 @@
 }
 
 .design-setup-image {
-  width: 390px;
+  width: 100px;
   height: auto;
   margin-bottom: 1rem;
   margin-right: 1rem;
@@ -168,5 +168,8 @@
 
   .design-setup-container {
     margin-right: 1em;
+  }
+  .design-setup-image {
+    min-width: 30em;
   }
 }
