@@ -43,7 +43,7 @@ function ImageMagnifier({
           style={{
             position: "relative",
             width: "100%",
-            border:'2px solid red'
+
           }}
           ref={relativConRef}
           onTouchMove={(e) => {

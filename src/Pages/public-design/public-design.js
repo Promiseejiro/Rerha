@@ -124,69 +124,72 @@ const PublicDesign = () => {
           </div>
         }
       />
-
-      <div className="barner-creator-and-design-discription">
-        <div className="design-discription-container">
-          <div className="design-discription-img"></div>
-          <div className="design-discription-content">
-            <div className="design-discription-heading">
-              <Headings text={"jamb sumbmit "}></Headings>
-            </div>
-            <p>
-              ring means andto some other use of this publication without
-              written permission of the copyright owner. Any breach of this will
-              entail legal action and
-            </p>
-            <div className="design-discription-heading-posted-user">
-              <img src={image} />
-              <div>
-                <p>promise</p>
-                {/* <p>Organizer</p> */}
+      {design.map((item) => (
+        <div className="barner-creator-and-design-discription">
+          <div className="barner-creator-and-design-discription-overlay"></div>
+          <div className="design-discription-container">
+            <div className="design-discription-img"></div>
+            <div className="design-discription-content">
+              <div className="design-discription-heading">
+                <Headings text={"jamb sumbmit "}></Headings>
               </div>
-            </div>
-            <div className="design-discription-time-container">
-              <div>
-                <AiTwotoneCamera
-                  style={{
-                    color: "#e00070",
-                  }}
-                />
-                <span>3 feb 3003</span>
-              </div>
-              <div>
-                <AiTwotoneCamera
-                  style={{
-                    color: "#e00070",
-                  }}
-                />
-                <span>3 feb 3003</span>
-              </div>
-            </div>
-            <div className="design-discription-view">
-              <div>
-                <span>3440</span>
-                <span
-                  style={{
-                    color: "#e00070",
-                  }}
-                >
-                  views
-                </span>
-              </div>
-              <div>
-                <span>3440</span>
-                <span
-                  style={{
-                    color: "#e00070",
-                  }}
-                >
-                  views
-                </span>
+              <p>
+                ring means andto some other use of this publication without
+                written permission of the copyright owner. Any breach of this
+                will entail legal action and
+              </p>
+              <div className="tryy">
+                <div className="design-discription-heading-posted-user">
+                  <img src={image} />
+                  <div>
+                    <p>promise</p>
+                  </div>
+                </div>
+                <div className="design-discription-time-container">
+                  <div>
+                    <AiTwotoneCamera
+                      style={{
+                        color: "#e00070",
+                      }}
+                    />
+                    <span>3 feb 3003</span>
+                  </div>
+                  <div>
+                    <AiTwotoneCamera
+                      style={{
+                        color: "#e00070",
+                      }}
+                    />
+                    <span>3 feb 3003</span>
+                  </div>
+                </div>
+                <div className="design-discription-view">
+                  <div>
+                    <span>3440</span>
+                    <span
+                      style={{
+                        color: "#e00070",
+                      }}
+                    >
+                      views
+                    </span>
+                  </div>
+                  <div>
+                    <span>3440</span>
+                    <span
+                      style={{
+                        color: "#e00070",
+                      }}
+                    >
+                      views
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      ))}
       <div className="public-design-setup">
         <div className="design-image-setup" ref={screenShotRef}>
           {design.map((item, index) => (

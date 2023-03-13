@@ -78,22 +78,30 @@ export const userDesktopNavData = [
 export const procedureData = [
   {
     icon: <BsCardImage className="procedure-icon" />,
-    text: "ring  means andto some other use of this publication) without written permission of the copyright owner. Any breach of this will entail legal action and ",
+    text: "Sign up and login user dashboard",
   },
   {
     icon: <GiResize className="procedure-icon" />,
-    text: "ring  means andto some other use of this publication) without written permission of the copyright owner. Any breach of this will entail legal action and ",
+    text: "Upload a frame",
   },
   {
     icon: <BiColorFill className="procedure-icon" />,
-    text: "ring  means andto some other use of this publication) without written permission of the copyright owner. Any breach of this will entail legal action and ",
+    text: "Resize and position defaul avarta",
   },
   {
     icon: <AiOutlineFontSize className="procedure-icon" />,
-    text: "ring  means andto some other use of this publication) without written permission of the copyright owner. Any breach of this will entail legal action and ",
+    text: "input first color or chosose your preferred color ",
   },
   {
     icon: <MdOutlineDataUsage className="procedure-icon" />,
-    text: "ring  means andto some other use of this publication) without written permission of the copyright owner. Any breach of this will entail legal action and ",
+    text: "Input font size or adjust size",
+  },
+  {
+    icon: <MdOutlineDataUsage className="procedure-icon" />,
+    text: "Click on generate button to generate frame URL",
+  },
+  {
+    icon: <MdOutlineDataUsage className="procedure-icon" />,
+    text: "Congratulation",
   },
 ];
