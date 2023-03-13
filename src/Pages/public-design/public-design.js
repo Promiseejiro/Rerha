@@ -200,19 +200,20 @@ const PublicDesign = () => {
                   width: `${eval(item.width)}px`,
                   height: `${eval(item.height)}px`,
                   borderRadius: "50%",
-                  top: `${eval(item.top)}px`,
-                  left: `${eval(item.left_side)}px`,
+                  top: `${eval(item.top) - 30}px`,
+                  left: `${eval(item.left_side) - 30}px`,
                   border: `${eval(item.thickness)}px solid ${
                     item.border_color
                   }`,
+                  border: "2px solid green",
                 }}
               />
 
               <div
                 className="user-name"
                 style={{
-                  top: `${item.name_top - 1.5}px`,
-                  left: `${item.name_left - 1.5}px`,
+                  top: `${item.name_top}px`,
+                  left: `${item.name_left}px`,
                 }}
               >
                 <h3

@@ -2,7 +2,6 @@
   position: relative;
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   font-family: "Wendy One", sans-serif;
@@ -11,20 +10,18 @@
 
 .design-setup {
   margin-top: 5rem;
-  padding: 2rem;
+  padding: 2rem 0;
   border-radius: 10px;
 }
 
 .design-setup-container {
   position: relative;
-  width: 30em;
 }
 
 .design-setup-image {
   width: 100px;
   height: auto;
   margin-bottom: 1rem;
-  margin-right: 1rem;
   min-width: 100%;
 }
 

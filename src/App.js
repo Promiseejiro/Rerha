@@ -49,6 +49,10 @@ function App() {
             element={<AdminPage showMobileNav={showMobileNav}></AdminPage>}
           ></Route>
           <Route
+            path="new"
+            element={<AdminPage showMobileNav={showMobileNav}></AdminPage>}
+          ></Route>
+          <Route
             path="pixo"
             element={<PixoImage src={src} onChange={onChange} />}
           ></Route>

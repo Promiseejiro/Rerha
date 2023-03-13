@@ -45,19 +45,20 @@ const AdminPage = () => {
   const [uploadMessage, setUploadMessage] = useState({});
   const [file, setDesignFile] = useState(defaultDesign);
   const [showMobileNav, setShowMobileNav] = useState(false);
-
+  const [touchPoint, setTouchPoint] = useState();
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log(user.token);
   const showMobileNavHandler = () => {
     setShowMobileNav(!showMobileNav);
   };
   const mouseMove = (e) => {
-    const x = e.pageX;
-    const y = e.pageY;
+    // const innerHeight = document.innerHeight();
+    // const innerwidth = document.innerwidth();
+
+    const x = e.clientX;
+    const y = e.clientY;
     const { left, top } = relativeContainer.current.getBoundingClientRect();
     const { width, height, bottom, right } =
       avartaRef.current.getBoundingClientRect();
-
     const nameRight = nameref.current.getBoundingClientRect().right;
     const nameBottom = nameref.current.getBoundingClientRect().bottom;
     const nameWidth = nameref.current.getBoundingClientRect().width;
@@ -97,6 +98,7 @@ const AdminPage = () => {
       const dy = y - bottom;
       const newLeft = x - left - width * 1.7;
       const newHeight = bottom + dy - height * 1.5;
+
       setPosition({
         ...position,
         left: x - left - width / 2,
@@ -140,6 +142,113 @@ const AdminPage = () => {
         bottomNameResizerTop: y - top - 31,
         newNameHeight: y - nameBottom + nameHeight,
         rightNameResizerHeight: y - nameBottom + nameHeight,
+      });
+    }
+  };
+  const touchMove = (e) => {
+    for (let i = 0; i < e.changedTouches.length; i++) {
+      setTouchPoint({
+        ...touchPoint,
+        x: e.changedTouches[i].clientX,
+        y: e.changedTouches[i].clientY,
+      });
+    }
+    const { left, top } = relativeContainer.current.getBoundingClientRect();
+    const { width, height, bottom, right } =
+      avartaRef.current.getBoundingClientRect();
+    const nameRight = nameref.current.getBoundingClientRect().right;
+    const nameBottom = nameref.current.getBoundingClientRect().bottom;
+    const nameWidth = nameref.current.getBoundingClientRect().width;
+    const nameHeight = nameref.current.getBoundingClientRect().height;
+
+    if (changeBoxSize.right) {
+      const dx = touchPoint.x - left;
+      const newWidth = touchPoint.x - right + width;
+      setPosition({
+        ...position,
+        // top: top,
+        width: newWidth,
+        // the + 40 is to give space between resizer and image
+        bottomResizerWidth: newWidth,
+        reightResizerLeft: touchPoint.x - left - 30,
+      });
+      // if (x < 382) {
+      //   // 402 = left + default width of image
+      //   alert("width cannot be smaller than the current width");
+      //   setChangeBoxSize(false);
+      // }
+    }
+    if (changeBoxSize.bottom) {
+      const dy = touchPoint.y - bottom;
+      const newHeight = dy + height;
+
+      setPosition({
+        ...position,
+        bottomResizerTop: touchPoint.y - top - 32,
+        height: newHeight,
+        bottomResizer: touchPoint.y - 100,
+        rightResizerHeight: newHeight,
+      });
+    }
+
+    if (changeBoxSize.moveImage) {
+      const dx = touchPoint.x - left + width;
+      const dy = touchPoint.y - bottom;
+      const newLeft = touchPoint.x - left - width * 1.7;
+      const newHeight = bottom + dy - height * 1.5;
+
+      setPosition({
+        ...position,
+        left: touchPoint.x - left - width / 2,
+        top: touchPoint.y - top - height / 2,
+        reightResizerLeft: touchPoint.x - left + width / 2,
+        rightResizerTop: touchPoint.y - top - height / 2,
+        bottomResizerTop: touchPoint.y - top + height / 2,
+        bottomResizerLeft: touchPoint.x - left - width / 2,
+        cursor: "move",
+      });
+
+      // console.log(
+      //   (window.innerHeight - touchPoint.y) * 100,
+      //   (window.innerWidth - touchPoint.x) * 100
+      // );
+    }
+
+    if (changeBoxSize.moveName) {
+      const nameConHeigth = nameref.current.getBoundingClientRect().height;
+      const nameConleft = nameref.current.getBoundingClientRect().left;
+      setPosition({
+        ...position,
+        nameTop: touchPoint.y - top - nameConHeigth,
+        nameLeft: touchPoint.x - left - nameWidth / 2,
+        bottomNameResizerLeft: touchPoint.x - left - nameWidth / 2,
+        bottomNameResizerTop: touchPoint.y - top,
+        rightNameResizerRight: touchPoint.x - left + nameWidth - nameWidth / 2,
+        rightNameResizerTop: touchPoint.y - top - nameConHeigth,
+        cursor: "move",
+      });
+      console.log("moving");
+      console.log(touchPoint.x, window.innerWidth);
+      console.log((touchPoint.x / window.innerWidth) * 100);
+      console.log((touchPoint.x / window.innerWidth) * 100);
+    }
+
+    if (changeBoxSize.nameRight) {
+      console.log(nameRight, nameWidth);
+      setPosition({
+        ...position,
+        rightNameResizerRight: touchPoint.x - left - 31,
+        bottomNameResizerWidth: touchPoint.x - nameRight + nameWidth,
+        newNameWidth: touchPoint.x - nameRight + nameWidth,
+      });
+    }
+    if (changeBoxSize.nameBottom) {
+      console.log(nameBottom, nameHeight);
+      setPosition({
+        ...position,
+        bottomNameResizerTop: touchPoint.y - top - 31,
+        newNameHeight: touchPoint.y - nameBottom + nameHeight,
+        rightNameResizerHeight: touchPoint.y - nameBottom + nameHeight,
       });
     }
   };
@@ -251,7 +360,7 @@ const AdminPage = () => {
         <div
           className="design-setup"
           onTouchEnd={mouseUp}
-          onTouchMove={mouseMove}
+          onTouchMove={touchMove}
           onMouseUp={mouseUp}
           onMouseMove={mouseMove}
           onCopy={(e) => {
@@ -357,6 +466,9 @@ const AdminPage = () => {
               onMouseDown={(e) => {
                 setChangeBoxSize({ ...changeBoxSize, moveName: true });
               }}
+              onTouchStart={(e) => {
+                setChangeBoxSize({ ...changeBoxSize, moveName: true });
+              }}
               onCopy={(e) => {
                 e.preventDefault();
               }}
@@ -371,17 +483,7 @@ const AdminPage = () => {
                 cursor: `${position.cursor}`,
               }}
             >
-              <h3
-                style={
-                  {
-                    // fontSize: `${designProperties.font_size}rem`,
-                    // fontWeight: `${designProperties.font_weight}px`,
-                    // color: designProperties.font_color,
-                  }
-                }
-              >
-                John Doe
-              </h3>
+              <h3>John Doe</h3>
               <p>IM ATTENDING</p>
             </div>
             <div
