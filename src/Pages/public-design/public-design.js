@@ -190,18 +190,8 @@ const PublicDesign = () => {
       <div className="public-design-setup">
         <div className="design-image-setup" ref={screenShotRef}>
           {design.map((item, index) => (
-            <div
-              key={index}
-              style={{
-                width: "100%",
-                height: "100%",
-              }}
-            >
-              <img
-                src={image}
-                className="design-setup-image"
-                style={{ width: "100%", height: "100%" }}
-              />
+            <div key={index}>
+              <img src={image} className="design-setup-image" />
               <img
                 key={index}
                 src={magnifiedImg}
@@ -239,13 +229,13 @@ const PublicDesign = () => {
             </div>
           ))}
         </div>
-        <div className="screen-Shot">
+        {/* <div className="screen-Shot">
           <div className="design-image-setup screen-Shot">
             <img src={image} className="design-setup-image" />
 
             <img src={magnifiedImg} className="selected-image" />
           </div>
-        </div>
+        </div> */}
         {/* the design-setup styling is applied from admain css */}
         {/* </div> */}
         <div className="public-positioning-form">

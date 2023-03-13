@@ -1,5 +1,6 @@
 .image-being-magnified {
-  width: 30rem;
-  height: 25rem;
+  width: 450px;
+  height: auto;
   margin-top: 4rem;
+  max-width:100%;
 }

@@ -75,7 +75,7 @@ function ImageMagnifier({
             onClick={(e) => {
               const ele = e.currentTarget;
 
-              console.log(window.pageXOffset);
+              
             }}
             onDragStart={(e) => e.preventDefault()}
             onTouchStart={(e) => {

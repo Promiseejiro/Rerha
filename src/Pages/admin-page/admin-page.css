@@ -21,10 +21,11 @@
 }
 
 .design-setup-image {
-  width: 30rem;
-  height: 25rem;
+  width: 390px;
+  height: auto;
   margin-bottom: 1rem;
   margin-right: 1rem;
+  min-width: 100%;
 }
 
 .chosen-image {
