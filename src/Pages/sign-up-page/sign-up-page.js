@@ -41,10 +41,12 @@ const SignUpForm = () => {
     e.preventDefault();
     try {
       const data = await axios.post(
-        "https://connectionpourtous.com/api/v1/login",
+        "https://connectionpourtous.com/api/v1/register-user",
         {
+          name: userInfo.name,
           email: userInfo.email,
           password: userInfo.password,
+          confirm_password: userInfo.password,
         },
         {
           headers: {
@@ -53,10 +55,12 @@ const SignUpForm = () => {
           },
         }
       );
-      console.log(data);
       localStorage.setItem("token", JSON.stringify(data.data.data.token));
-      if (data) {
-        navigate("/adminpage");
+      if (data.data.success) {
+        alert("User creacted successfully, proceed to sign in");
+        navigate("/login");
+      } else {
+        alert("incorect details");
       }
     } catch (error) {
       console.log(error.response);
@@ -101,6 +105,12 @@ const SignUpForm = () => {
             >
               <Input
                 icon={<FaUserAlt />}
+                type="name"
+                name="name"
+                handleChange={handleChange}
+              ></Input>
+              <Input
+                icon={<FaUserAlt />}
                 type="email"
                 name="email"
                 handleChange={handleChange}
@@ -115,7 +125,7 @@ const SignUpForm = () => {
               <Input
                 icon={<AiFillEyeInvisible />}
                 type="password"
-                name="confirm password"
+                name="confirm_password"
                 handleChange={handleChange}
                 // <RiLockPasswordFill />
               ></Input>

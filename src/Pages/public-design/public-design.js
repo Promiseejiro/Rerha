@@ -5,15 +5,12 @@ import { AiTwotoneCamera, AiOutlineDownload } from "react-icons/ai";
 import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import image from "../../image/image-1.jpg";
-import defaultAvarta from "../image/dp";
+import defaultAvarta from "../../image/dp.png";
 import WebcamCapture from "../../components/webcam/webcam";
-import Slider from "../../components/slideshow/slideshow";
 import Header from "../../components/header/header";
 import DesktopNav from "../../components/desktop-nav-link/desktop-nav-link";
-import SearchComponent from "../../components/search-component/search";
 import Btn from "../../components/btn/btn";
 import Headings from "../../components/heading/heading";
-
 import html2canvas from "html2canvas";
 import ImageMagnifier from "../../components/magnifier/magnifier";
 
@@ -307,8 +304,6 @@ const PublicDesign = () => {
             capturedMagnifyerHandler={capturedMagnifyerHandler}
             closeMagnifierHandler={() => {
               setClosemagnifier(true);
-              console.log(JSON.parse(localStorage.getItem("magnifiedimg")));
-              alert("succes");
             }}
           />
         </div>

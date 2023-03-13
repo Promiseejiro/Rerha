@@ -16,8 +16,10 @@ function ImageMagnifier({
   const [showMagnifier, setShowMagnifier] = useState(false);
   const [newImage, setNewImag] = useState("");
   const [[x, y], setXY] = useState([0, 0]);
+  const [touchPoint, setTouchPoint] = useState({});
   const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
   const screenShotRef = useRef();
+  const relativConRef = useRef();
 
   const screenShot = () => {
     html2canvas(screenShotRef.current).then((canvas) => {
@@ -42,6 +44,30 @@ function ImageMagnifier({
             position: "relative",
             width: "100%",
           }}
+          ref={relativConRef}
+          onTouchMove={(e) => {
+            // const touch =
+
+            // const { top, left } = elem.getBoundingClientRect();
+            const { top, left, width, height } =
+              relativConRef.current.getBoundingClientRect();
+            for (let i = 0; i < e.changedTouches.length; i++) {
+              setTouchPoint({
+                ...touchPoint,
+                x: e.changedTouches[i].clientX,
+                y: e.changedTouches[i].clientY,
+              });
+            }
+            const x = touchPoint.x - left;
+            const y = touchPoint.y - top;
+            console.log(x, y);
+            // console.log(touchPage.touchPageX, touchPage.touchPageY);
+            // // update cursor position
+
+            // calculate cursor position on the image
+
+            setXY([x, y]);
+          }}
         >
           <img
             className="image-being-magnified"
@@ -58,7 +84,6 @@ function ImageMagnifier({
               const { width, height } = elem.getBoundingClientRect();
               setSize([width, height]);
               setShowMagnifier(true);
-              console.log("down");
             }}
             onMouseDown={(e) => {
               // update image size and turn-on magnifier
@@ -67,35 +92,23 @@ function ImageMagnifier({
               setSize([width, height]);
               setShowMagnifier(true);
             }}
-            onTouchEnd={() => {
-              screenShot();
-              setShowMagnifier(false);
-              console.log("down");
-            }}
-            onMouseUp={() => {
-              screenShot();
-              setShowMagnifier(false);
-            }}
-            onTouchMove={(e) => {
-              console.log("moving");
-              // update cursor position
-              const elem = e.currentTarget;
-              const { top, left } = elem.getBoundingClientRect();
-
-              // calculate cursor position on the image
-              const x = e.pageX - left - window.pageXOffset;
-              const y = e.pageY - top - window.pageYOffset;
-              setXY([x, y]);
-            }}
             onMouseMove={(e) => {
               // update cursor position
               const elem = e.currentTarget;
               const { top, left } = elem.getBoundingClientRect();
 
               // calculate cursor position on the image
-              const x = e.pageX - left - window.pageXOffset;
-              const y = e.pageY - top - window.pageYOffset;
+              const x = e.clientX - left;
+              const y = e.clientY - top;
               setXY([x, y]);
+            }}
+            onTouchEnd={() => {
+              screenShot();
+              setShowMagnifier(false);
+            }}
+            onMouseUp={() => {
+              screenShot();
+              setShowMagnifier(false);
             }}
           />
           <div

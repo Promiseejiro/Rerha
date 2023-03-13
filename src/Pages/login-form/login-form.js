@@ -41,7 +41,7 @@ const SignInForm = () => {
     e.preventDefault();
     try {
       const data = await axios.post(
-        "https://connectionpourtous.com/api/v1/login",
+        "https://connectionpourtous.com/api/v1/login-user",
         {
           email: userInfo.email,
           password: userInfo.password,
@@ -56,7 +56,7 @@ const SignInForm = () => {
       console.log(data.data.success);
       localStorage.setItem("user", JSON.stringify(data.data.data));
       if (data.data.success) {
-        navigate(`/${data.data.data.email}`);
+        navigate(`/${data.data.data.name}`);
       } else {
         alert("incoress details");
       }

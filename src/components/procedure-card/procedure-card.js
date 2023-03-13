@@ -9,7 +9,7 @@ const ProcedureCard = () => {
   return (
     <React.Fragment>
       {procedureData.map((card, index) => (
-        <div className="procedure-card">
+        <div className="procedure-card" key={index}>
           {card.icon}
           <p>{card.text}</p>
         </div>
